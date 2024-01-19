@@ -7,9 +7,9 @@ import {
 } from "firebase/auth";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
+import { photoURL, bg_IMG } from "../utils/constant";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -18,8 +18,6 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const dispatch = useDispatch();
-
-  const navigate = useNavigate();
 
   const handleButtonClick = () => {
     // Validate the form data
@@ -39,7 +37,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/113919711?v=4",
+            photoURL: photoURL,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -51,7 +49,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(error.message);
@@ -70,8 +67,6 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -89,10 +84,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute w-screen">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/16006346-87f9-4226-bc25-a1fb346a2b0c/9662d0fd-0547-4665-b887-771617268815/IN-en-20240115-popsignuptwoweeks-perspective_alpha_website_small.jpg"
-          alt="bg"
-        />
+        <img src={bg_IMG} alt="bg" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
