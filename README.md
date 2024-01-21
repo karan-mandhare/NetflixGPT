@@ -43,6 +43,7 @@
 - GPT Search Bar
 - (BONUS) Multi-language Features in our App
 - Integrate GPT API`s 
+- Serching More Movies Features Added
 
 
 # Features
