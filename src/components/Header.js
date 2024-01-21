@@ -46,7 +46,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute px-6 py-2 bg-gradient-to-b from-black w-screen z-10 flex justify-between">
+    <div className="absolute px-6 py-2 bg-gradient-to-b from-black w-[100%] z-10 flex justify-between">
       <img className="w-52" src={LOGO_URL} alt="logo" />
       {user && (
         <div className="flex p-2">
