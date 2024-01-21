@@ -39,6 +39,10 @@
 - useNowPlayingMovies Custom Hook
 - useTopRatedMovies Custom Hook
 - useUpcomingMovies Custom Hook
+- GPT Search Page
+- GPT Search Bar
+- (BONUS) Multi-language Features in our App
+- Integrate GPT API`s 
 
 
 # Features
