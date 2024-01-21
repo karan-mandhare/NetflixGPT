@@ -44,6 +44,10 @@
 - (BONUS) Multi-language Features in our App
 - Integrate GPT API`s 
 - Serching More Movies Features Added
+- fetch Movie for user input
+- Reused Movie List Component to make movie suggestion container
+- Memoization
+- Made our site responsive
 
 
 # Features

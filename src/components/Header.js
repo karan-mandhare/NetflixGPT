@@ -58,13 +58,13 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute px-6 py-2 bg-gradient-to-b from-black w-[100%] z-10 flex justify-between">
-      <img className="w-52" src={LOGO_URL} alt="logo" />
+    <div className="absolute px-6 py-2 bg-gradient-to-b from-black w-[100%] z-10 flex justify-between flex-col md:flex-row">
+      <img className="w-52 md:mx-0 mx-auto" src={LOGO_URL} alt="logo" />
       {user && (
         <div className="flex p-2">
           {gpt && (
             <select
-              className="px-4 m-4 py-2 bg-gray-900 text-white"
+              className="px-2 md:m-4 my-[15px] py-2 bg-gray-900 text-white"
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGE.map((lang) => (
@@ -81,7 +81,7 @@ const Header = () => {
             {gpt ? "Home Page" : "GPT Search"}
           </button>
           <img
-            className="w-12 h-12 mt-4 rounded-3xl"
+            className="w-12 h-12 md:mt-4 mt-6 rounded-3xl"
             src={user.photoURL}
             alt="usericon"
           />

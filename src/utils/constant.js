@@ -11,7 +11,7 @@ export const API_OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer " + process.env.REACT_APP_TMDB_KEY,
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYzJiMWYxYjhhMjQyYmQ4YTc5ZTUyOGRkNzFlZWZkYyIsInN1YiI6IjY1YWE2OWI1ZDk1NDIwMDBkNDIxNGIxNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6cHfoZncpnLbOKvJ_TN9-ycNaxIfUz3ldqpNzdzdcEY",
   },
 };
 
@@ -23,4 +23,3 @@ export const SUPPORTED_LANGUAGE = [
   { identifier: "marathi", name: "Marathi" },
   { identifier: "spanish", name: "Spanish" },
 ];
-

@@ -19,7 +19,7 @@ const GptSearchBar = () => {
       );
 
       const json = await response.json();
-      setMoveList(json.results);
+      json.results && setMoveList(json.results);
     } catch (error) {
       console.error("Error fetching data:", error.message);
     }
@@ -27,33 +27,32 @@ const GptSearchBar = () => {
 
   return (
     <>
-      <div className="pt-[10%] flex justify-center">
+      <div className="md:pt-[10%] pt-[55%] flex justify-center">
         <form
           onSubmit={(action) => action.preventDefault()}
-          className="w-1/2 bg-black grid grid-cols-12"
+          className="md:w-1/2 w-11/12 bg-black grid grid-cols-12"
         >
           <input
             type="text"
-            className="p-4 m-4 col-span-9"
+            className="p-4 m-4 md:col-span-9 col-span-8"
             ref={searchText}
             placeholder={lang[store].gptSearchPlaceholder}
           />
           <button
-            className="py-2 px-4 bg-red-700 text-white rounded-lg col-span-3 m-4"
+            className="py-2 px-2 bg-red-700 text-white rounded-lg col-span-3 m-4"
             onClick={handleGptSearchClick}
           >
             {lang[store].search}
           </button>
         </form>
       </div>
-      <div className="bg-gradient-to-t from-black">
-        <div className="w-4/5 m-auto mt-10 flex flex-wrap">
-          {movieList &&
-            movieList.map((item) => (
-              <MovieCard key={item.id} poster_path={item.poster_path} />
-            ))}
+      {movieList && (
+        <div className="w-full mt-10 flex flex-wrap justify-center bg-black p-6 bg-opacity-90">
+          {movieList.map((item) => (
+            <MovieCard key={item.id} poster_path={item.poster_path} />
+          ))}
         </div>
-      </div>
+      )}
     </>
   );
 };

@@ -83,12 +83,12 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute w-[100%]">
-        <img src={BG_URL} alt="bg" />
+      <div className="absolute">
+        <img src={BG_URL} alt="bg" className="h-screen  w-screen object-cover" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute p-12 bg-black w-4/12 mx-auto my-32 right-0 left-0 bg-opacity-80 text-white"
+        className="absolute md:p-12 p-6 bg-black md:w-4/12 w-4/5 mx-auto md:my-32 my-24 right-0 left-0 bg-opacity-80 text-white"
       >
         <h1 className="text-3xl py-4 mb-2">
           {isSignInForm ? "Sign In" : "Sign Up"}
@@ -120,7 +120,7 @@ const Login = () => {
         >
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
-        <p onClick={toggleSignupForm} className="py-4 cursor-pointer">
+        <p onClick={toggleSignupForm} className="py-4 md:px-0 px-4 cursor-pointer">
           {isSignInForm
             ? "New to Netflix? Sign Up Now"
             : "Already registered? Sign In Now"}
